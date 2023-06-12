@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./move_row.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <style>
+
+  </style>
+<link href="./css/styles.css?34fa27f2c7d7877b4e41" rel="stylesheet"></head>
+
+<body>
+
+  <ul class="list-items">
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-1" />
+      <label for="item-1">item1</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-2" />
+      <label for="item-2">item2</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-3" />
+      <label for="item-3">item3</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-4" />
+      <label for="item-4">item4</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-5" />
+      <label for="item-5">item5</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-6" />
+      <label for="item-6">item6</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-7" />
+      <label for="item-7">item7</label>
+    </li>
+    <li>
+      <input type="checkbox" name="item" class="item-check" id="item-8" />
+      <label for="item-8">item8</label>
+    </li>
+  </ul>
+
+  <div class="sort-control">
+    <button type="button" id="moveTop" onclick="checkedItemReorder('top')">맨위</button>
+    <button type="button" id="moveBottom" onclick="checkedItemReorder('bottom')">맨아래</button>
+    <button type="button" id="movePrev" onclick="checkedItemReorder('prev')">위</button>
+    <button type="button" id="moveNext" onclick="checkedItemReorder('next')">아래</button>
+  </div>
+
+  <script>
+
+    function checkedItemReorder(pos) {
+      var ul = document.querySelector('.list-items');
+      var li = document.querySelector('.list-items li');
+      var checkboxes = document.querySelectorAll('input[name=item]:checked'), values = [];
+      items = [];
+
+      Array.prototype.forEach.call(checkboxes, function (el) {
+        el.checked = false;
+        items.push(el);
+        prev = items[0].parentNode.previousElementSibling;
+        next = items[items.length - 1].parentNode.nextElementSibling;
+      });
+
+      // console.log(prev, next);
+
+      if (pos == 'top' || pos == 'next') items.reverse();
+
+      for (var i = 0; i < items.length; i++) {
+        if (pos == 'top') {
+          ul.prepend(items[i].parentNode);
+        }
+        else if (pos == 'bottom') {
+          ul.appendChild(items[i].parentNode);
+        }
+        else if (pos == 'prev') {
+          if (prev !== null)
+            ul.insertBefore(items[i].parentNode, prev);
+        }
+        else if (pos == 'next') {
+          if (next !== null)
+            next.after(items[i].parentNode);
+        }
+      }
+    }
+
+  </script>
+<script src="./js/index.bundle.js?34fa27f2c7d7877b4e41"></script></body>
+
+</html>

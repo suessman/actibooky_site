@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>상품 구매</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/headertitle.css">
+    <!-- include -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="favicon.ico">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/l10n/ko.min.js" crossorigin="anonymous"></script> -->
+<script src="../js/dotdotdot.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script> -->
+<script src="../js/owlcarousel.js"></script>
+<script type="text/javascript" defer src="../js/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+<script type="text/javascript" defer src="../js/daterangepicker.js"></script>
+
+<!-- swiper css, js -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<script src="../js/swiper-bundle.js"></script>
+
+
+<!-- header -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('body').removeClass('hidden');
+            } else {
+                $('body').addClass('hidden');
+            }
+        })
+
+    })
+
+</script>
+    <style>
+        .custom-radio .custom-control-input:checked~.custom-control-label::before {
+            color: #ffffff;
+            border-color: #9334ff;
+            background-color: #fff;
+        }
+
+        .custom-radio .custom-control-input:checked~.custom-control-label::after {
+            border-color: #9334ff;
+            background-color: #9334ff;
+        }
+
+        .custom-radio .custom-control-label::before {
+            width: 16px;
+            height: 16px;
+        }
+
+        .custom-radio .custom-control-label::after {
+            background-image: none !important;
+            position: absolute;
+            top: 30%;
+            left: -18px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            content: "";
+            background: 50% / 50% 50% no-repeat;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .custom-control-input {
+            position: absolute;
+            right: 0;
+            left: auto !important;
+            z-index: -1;
+            width: 1rem;
+            height: 1.25rem;
+            opacity: 0;
+        }
+    </style>
+<link href=".././css/styles.css?34fa27f2c7d7877b4e41" rel="stylesheet"></head>
+
+<body>
+    <!-- 브라우저 권장 --> <!--[if IE]>
+<div class="p-3 bg-light">
+  <div class="container">
+    <p class="mb-0 browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+    </p>
+  </div>
+</div>
+<![endif]-->
+
+    <div class="">
+        <!-- 헤더 --> <header class="header">
+
+  <div class="container">
+    <div class="header-top">
+      <!-- 로그인 전 -->
+      <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login.html">로그인<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cscenter/notice.html">고객지원</a>
+        </li>
+      </ul>
+      <!-- 로그인 후 -->
+      <!-- <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <button type="button" class="nav-link">로그아웃</button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/farmPlay.html">고객지원</a>
+        </li>
+      </ul> -->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/index.html">
+        <img src="../images/logo@3x.png" alt="로고" class="nav-logo">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="acetrnt-toggle" data-click-state="1">
+          <span class="icon-bar line-1"></span>
+          <span class="icon-bar line-2"></span>
+          <span class="icon-bar line-3"></span>
+        </div>
+      </button>
+
+
+      <div class="navbar-collapse collapse multi-collapse" id="navbarSupportedContent">
+        <!-- app header ui -->
+        <div class="app-header-ui">
+          <a href="/login.html" class="login">로그인 해주세요
+            <img class="sm-icon" srcset="../images/icon-right-white.png 400w,
+                    ../images/icon-right-white@2x.png 700w,
+                    ../images/icon-right-white@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="로그인페이지로이동" />
+          </a>
+          <div class="list">
+            <a href="/index.html">
+              <img class="sm-icon" srcset="../images/icon-home-white.png 400w,
+                      ../images/icon-home-white@2x.png 700w,
+                      ../images/icon-home-white@3x.png 1000w" src="../images/icon-home-white@3x" alt="홈" />
+              홈
+            </a>
+            <a href="">
+              <img class="sm-icon" srcset="../images/icon-mypage-white.png 400w,
+                      ../images/icon-mypage-white@2x.png 700w,
+                      ../images/icon-mypage-white@3x.png 1000w" src="../images/icon-mypage-white@3x" alt="마이페이지" />
+              마이페이지
+            </a>
+            <!-- non member -->
+            <a href="/login.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                      ../images/icon-date-white@2x.png 700w,
+                      ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a>
+            <!-- member -->
+            <!-- <a href="/mypage/myBook.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                                  ../images/icon-date-white@2x.png 700w,
+                                  ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a> -->
+          </div>
+        </div>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/stay/stayMain.html">숙소<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/exp/expMain.html">체험</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/promotions/promoMain.html">프로모션</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/productsMain.html">상품구매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">우수체험관</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 web-header-ui">
+          <!-- 로그인 전 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color" data-toggle="modal" data-target="#reservationConfirm">예약확인&nbsp;</a>
+          </div>
+          <!-- 로그인 후 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color">예약확인&nbsp;</a>
+            <a href="/login.html" class="nav-right">|&nbsp; 마이페이지</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+        <main class="d-flex flex-column h-100 main">
+
+            <header class="header-title">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between">
+                                <!-- <a href="">
+                      <img src="../images/icon-left-black@3x.png" class="sm-icon" alt="뒤로가기">
+                    </a> -->
+                                <button class="navbar-toggler collapsed header-main" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+                                    <div class="acetrnt-toggle" data-click-state="1">
+                                        <span class="icon-bar line-1"></span>
+                                        <span class="icon-bar line-2"></span>
+                                        <span class="icon-bar line-3"></span>
+                                    </div>
+                                </button>
+                                <h1 class="title">상품구매</h1>
+                                <a href="/partials/search.html">
+                                    <img src="../images/icon-search-gray.png" class="sm-icon" alt="검색화면으로이동">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="top-filter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="product-category">
+                                <li class="list">
+                                    <a href="" class="active">전체</a>
+                                </li>
+
+                                <li class="list">
+                                    <a href="" class="">체험키트</a>
+                                </li>
+
+                                <li class="list">
+                                    <a href="" class="">농식품</a>
+                                </li>
+
+                                <li class="list">
+                                    <a href="" class="">카테고리</a>
+                                </li>
+                            </ul>
+                            <div class="form-group filter-group md-up-d-block d-flex mt-3">
+                                <div class="btn-group dropdown-group full">
+                                    <button type="button" class="dropdown-filter btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        가격
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <div class="d-flex justify-content-between">
+                                            <h1 class="dropdown-title">가격</h1>
+                                            <button type="button" class="dropdown-close close" data-dismiss="modal" aria-label="Close">
+                                                <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                  ../images/icon-cancel-gray@2x.png 700w,
+                                                  ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기">
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select1" name="category">
+                                                <label class="custom-control-label check-list" for="select1"><span>전체</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select2" name="category">
+                                                <label class="custom-control-label check-list" for="select2">5천원미만</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select3" name="category">
+                                                <label class="custom-control-label check-list" for="select3">5천원~1만원미만</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select4" name="category">
+                                                <label class="custom-control-label check-list" for="select4">1만원~1만5천원미만</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select5" name="category">
+                                                <label class="custom-control-label check-list" for="select5">1만원~1만5천원미만</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select6" name="category">
+                                                <label class="custom-control-label check-list" for="select6">1만5천원~2만원미만</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input check-box-list" id="select7" name="category">
+                                                <label class="custom-control-label check-list" for="select7">2만원이상</label>
+                                            </div>
+                                        </div>
+                                        <div class="text-center apply-btn-wrapper">
+                                            <button type="button" class="btn btn-primary apply dropdown-close">적용하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="filter-input form-control" placeholder="검색어를 입력해주세요">
+                                <button type="button" class="btn-primary filter-search-btn">검색</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="row">
+                    <section class="col-12 mt-5 m-mt section-body card-ui">
+                        <div class="d-flex justify-content-between top-title">
+                            <h3 class="invisible">상품</h3>
+                            <select name="" id="" class="form-control filter-select">
+                                <option value="">인기순</option>
+                                <option value="">최신순</option>
+                                <option value="">낮은가격순</option>
+                            </select>
+                        </div>
+                        <ul class="popular-card-body company-product-body">
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1584436138541-4a1d0c9deace?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8amVqdSUyMGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리카테고리</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow strcut strcut-twoline">제주도한라봉!_!</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/bread.jpg')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제목</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1598943392629-19ddae99855c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">없는게 없는 국진철물 철물점.!.</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1579169825453-8d4b4653cc2c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제주도 서귀포로 와서 , 함께 따는 귤체험을 즐겨보세요ㅇ_ㅇ</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1584436138541-4a1d0c9deace?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8amVqdSUyMGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리카테고리</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow strcut strcut-twoline">제주도한라봉!_!</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.htm ">
+                                    <div class="content" style="background-image:url('../images/bread.jpg')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제목</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1598943392629-19ddae99855c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">없는게 없는 국진철물 철물점.!.</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1579169825453-8d4b4653cc2c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제주도 서귀포로 와서 , 함께 따는 귤체험을 즐겨보세요ㅇ_ㅇ</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1584436138541-4a1d0c9deace?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8amVqdSUyMGZvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리카테고리</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow strcut strcut-twoline">제주도한라봉!_!</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/bread.jpg')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제목</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1598943392629-19ddae99855c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">없는게 없는 국진철물 철물점.!.</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card four product half-width">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1579169825453-8d4b4653cc2c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGplanUlMjBmb29kfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="pr-category">카테고리</span>
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <h1 class="title-overflow">제주도 서귀포로 와서 , 함께 따는 귤체험을 즐겨보세요ㅇ_ㅇ</h1>
+                                    <p>
+                                        <span class="price">₩25000</span>
+                                        <del class="sale-price">₩44000</del>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <nav aria-label="Page navigation example" class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-left-black.png 400w,
+                                                                              ../images/icon-left-black@2x.png 700w,
+                                                                              ../images/icon-left-black@3x.png 1000w" src="../images/icon-left-black@3x.png" alt="이전" />
+                                </a>
+                            </li>
+                            <li class="page-item active number"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-right-black.png 400w,
+                                                                              ../images/icon-right-black@2x.png 700w,
+                                                                              ../images/icon-right-black@3x.png 1000w" src="../images/icon-right-black@3x.png" alt="다음" />
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </main> <!-- Footer -->
+<footer class="footer bg-light text-lg-start">
+    <!-- Grid container -->
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4">
+                <ul class="list-unstyled mb-0 d-flex">
+                    <li>
+                        <a href="/account/terms.html" class="text-dark">이용약관&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/account/policy.html" class="text-dark">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/cscenter/notice.html" class="text-dark">&nbsp;&nbsp;고객지원</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#partnership" class="text-dark">&nbsp;&nbsp;제휴 및 입점문의</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+
+            <!-- 제휴 및 입점 문의 -->
+            <!-- Modal -->
+            <div class="modal fade" id="partnership" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog popup">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title text-md" id="exampleModalLabel">제휴 및 입점 문의</h4>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                                                                ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                                                                ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기" />
+              </button> -->
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" placeholder="업체명">
+                            <input type="text" class="form-control mt-3" placeholder="브랜드명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 이메일">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 전화번호">
+                            <textarea class="form-control mt-4" cols="30" rows="10" placeholder="구체적인 제휴내용을 입력하세요"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="check">
+                                <label class="custom-control-label checkbox text-dark" for="check">개인정보 수집 및 이용에 동의</label>
+                            </div>
+                            <textarea class="form-control mt-2 bg-white" cols="30" rows="10" readonly></textarea>
+
+                        </div>
+                        <div class="modal-footer buttons">
+                            <button type="button" class="btn btn-outline-primary list-one" data-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-primary list-two">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 m-t5">
+                <h5 class="text-uppercase mb-0">액티부키</h5>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                        <div class="m-t1">
+                            <span>사업자 등록번호 : 123-56-789</span>
+                            <span>대표 : 이동원</span>
+                        </div>
+                        <div class="m-th">전라북도 전주시 완산구 효자동2가 바우배기2길 18, 2층 202호</div>
+                    </div>
+                    <!-- sns -->
+                    <ul class="sns-group">
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/naver-footer.png 400w,
+                                                ../images/naver-footer@2x.png 700w,
+                                                ../images/naver-footer@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="네이버" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/facebook.png 400w,
+                                                ../images/facebook@2x.png 700w,
+                                                ../images/facebook@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="카카오" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/instagram.png 400w,
+                                                ../images/instagram@2x.png 700w,
+                                                ../images/instagram@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="인스타그램" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+</footer>
+<!-- Footer -->
+    </div>
+
+    <script>
+        $(function () {
+
+            //dotdotdot
+            function setDotDotDot() {
+                $(".title-overflow").dotdotdot({
+                    ellipsis: '...',//말줄임 뭘로 할지
+                    watch: true, //윈도우 창에따라서 업데이트 할건지, 윈도우가 리사이즈될 때 업데이트할 건지
+                    wrap: 'letter',//word(단어단위), letter(글 단위), children(자식단위) 자르기
+                    height: 40,
+                    tolerance: 20
+                    //글이 넘치면 얼만큼 height 늘릴건
+                });
+            }
+
+            setDotDotDot();
+
+            $('.dropdown-menu').click(function (e) {
+                // console.log(e);
+                e.stopPropagation();
+            })
+
+            $('.dropdown-close').click(function () {
+                $('.dropdown-menu').removeClass('show');
+            })
+
+
+            $('.apply').click(function () {
+                for (var i = 0; i < $('.dropdown-item').length; i++) {
+                    let checkedItem;
+                    if ($('.check-box-list').eq(i).is(':checked')) {
+                        checkedItem = ($('.check-box-list').eq(i));
+                        checkedItemVal = checkedItem.next().text();
+                        $('.dropdown-filter').text(checkedItemVal);
+                    }
+                }
+            })
+        })
+
+
+    </script>
+<script src=".././js/index.bundle.js?34fa27f2c7d7877b4e41"></script></body>
+
+
+</html>

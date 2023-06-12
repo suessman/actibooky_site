@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>프로모션</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/headertitle.css">
+    <!-- include -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="favicon.ico">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/l10n/ko.min.js" crossorigin="anonymous"></script> -->
+<script src="../js/dotdotdot.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script> -->
+<script src="../js/owlcarousel.js"></script>
+<script type="text/javascript" defer src="../js/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+<script type="text/javascript" defer src="../js/daterangepicker.js"></script>
+
+<!-- swiper css, js -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<script src="../js/swiper-bundle.js"></script>
+
+
+<!-- header -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('body').removeClass('hidden');
+            } else {
+                $('body').addClass('hidden');
+            }
+        })
+
+    })
+
+</script>
+<link href=".././css/styles.css?34fa27f2c7d7877b4e41" rel="stylesheet"></head>
+
+<body>
+    <!-- 브라우저 권장 -->
+    <!--[if IE]>
+<div class="p-3 bg-light">
+  <div class="container">
+    <p class="mb-0 browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+    </p>
+  </div>
+</div>
+<![endif]-->
+
+    <div class="position-relative">
+        <header class="header">
+
+  <div class="container">
+    <div class="header-top">
+      <!-- 로그인 전 -->
+      <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login.html">로그인<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cscenter/notice.html">고객지원</a>
+        </li>
+      </ul>
+      <!-- 로그인 후 -->
+      <!-- <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <button type="button" class="nav-link">로그아웃</button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/farmPlay.html">고객지원</a>
+        </li>
+      </ul> -->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/index.html">
+        <img src="../images/logo@3x.png" alt="로고" class="nav-logo">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="acetrnt-toggle" data-click-state="1">
+          <span class="icon-bar line-1"></span>
+          <span class="icon-bar line-2"></span>
+          <span class="icon-bar line-3"></span>
+        </div>
+      </button>
+
+
+      <div class="navbar-collapse collapse multi-collapse" id="navbarSupportedContent">
+        <!-- app header ui -->
+        <div class="app-header-ui">
+          <a href="/login.html" class="login">로그인 해주세요
+            <img class="sm-icon" srcset="../images/icon-right-white.png 400w,
+                    ../images/icon-right-white@2x.png 700w,
+                    ../images/icon-right-white@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="로그인페이지로이동" />
+          </a>
+          <div class="list">
+            <a href="/index.html">
+              <img class="sm-icon" srcset="../images/icon-home-white.png 400w,
+                      ../images/icon-home-white@2x.png 700w,
+                      ../images/icon-home-white@3x.png 1000w" src="../images/icon-home-white@3x" alt="홈" />
+              홈
+            </a>
+            <a href="">
+              <img class="sm-icon" srcset="../images/icon-mypage-white.png 400w,
+                      ../images/icon-mypage-white@2x.png 700w,
+                      ../images/icon-mypage-white@3x.png 1000w" src="../images/icon-mypage-white@3x" alt="마이페이지" />
+              마이페이지
+            </a>
+            <!-- non member -->
+            <a href="/login.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                      ../images/icon-date-white@2x.png 700w,
+                      ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a>
+            <!-- member -->
+            <!-- <a href="/mypage/myBook.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                                  ../images/icon-date-white@2x.png 700w,
+                                  ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a> -->
+          </div>
+        </div>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/stay/stayMain.html">숙소<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/exp/expMain.html">체험</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/promotions/promoMain.html">프로모션</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/productsMain.html">상품구매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">우수체험관</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 web-header-ui">
+          <!-- 로그인 전 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color" data-toggle="modal" data-target="#reservationConfirm">예약확인&nbsp;</a>
+          </div>
+          <!-- 로그인 후 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color">예약확인&nbsp;</a>
+            <a href="/login.html" class="nav-right">|&nbsp; 마이페이지</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+        <header class="header-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between">
+                            <!-- <a href="">
+                <img src="../images/icon-left-black@3x.png" class="sm-icon" alt="뒤로가기">
+              </a> -->
+                            <button class="navbar-toggler collapsed header-main" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+                                <div class="acetrnt-toggle" data-click-state="1">
+                                    <span class="icon-bar line-1"></span>
+                                    <span class="icon-bar line-2"></span>
+                                    <span class="icon-bar line-3"></span>
+                                </div>
+                            </button>
+                            <h1 class="title">프로모션</h1>
+                            <a href="/partials/search.html">
+                                <img src="../images/icon-search-gray.png" class="sm-icon" alt="검색화면으로이동">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="d-flex flex-column h-100 main main-nav">
+            <div id="carouselExampleIndicators" class="carousel slide promotion" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner promotion">
+                    <!--pc-->
+                    <div class="carousel-item active pc">
+                        <img src="../images/promotion.png" alt="프로모션상품" />
+                    </div>
+                    <div class="carousel-item pc">
+                        <img src="../images/promotion.png" alt="프로모션상품" />
+                    </div>
+                    <div class="carousel-item pc">
+                        <img src="../images/promotion.png" alt="프로모션상품" />
+                    </div>
+                    <!--mobile-->
+                    <div class="carousel-item active mobile">
+                        <img src="../images/promotion-mobile.png" alt="프로모션상품" />
+                    </div>
+                    <div class="carousel-item mobile">
+                        <img src="../images/promotion-mobile.png" alt="프로모션상품" />
+                    </div>
+                    <div class="carousel-item mobile">
+                        <img src="../images/promotion-mobile.png" alt="프로모션상품" />
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <img srcset="../images/icon-left-white.png 400w,
+                          ../images/icon-left-white@2x.png 700w,
+                          ../images/icon-left-white@3x.png 1000w" src="../images/icon-left-white@3x.png" alt="이전이미지" />
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <img srcset="../images/icon-right-white.png 400w,
+                          ../images/icon-right-white@2x.png 700w,
+                          ../images/icon-right-white@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="다음이미지" />
+                </a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <section class="col-12 mt-5 section-body card-ui m-mt">
+                        <div class="d-flex justify-content-between top-title">
+                            <h3 class="invisible">농촌 여행지</h3>
+                            <select name="" id="" class="form-control filter-select">
+                                <option value="">최신순</option>
+                                <option value="">인기순</option>
+                                <option value="">낮은가격순</option>
+
+                            </select>
+                        </div>
+                        <ul class="popular-card-body list">
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1558391743-ca83be23f286?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb21vdGlvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                        ../images/icon-promotion@2x.png 700w,
+                                                        ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        세가지 체험을 한번에!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('../images/crystal.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                        ../images/icon-promotion@2x.png 700w,
+                                                        ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        론칭기념10%off
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>나만의 특별한 돌목걸이 만들기 체험</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('../images/daniel.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                                            ../images/icon-promotion@2x.png 700w,
+                                                                            ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        세가지 체험을 한번에!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1607082333475-51c2938c9bfc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                                            ../images/icon-promotion@2x.png 700w,
+                                                                            ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        세가지 체험을 한번에!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1607082333475-51c2938c9bfc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                                                          ../images/icon-promotion@2x.png 700w,
+                                                                                          ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        세가지 체험을 한번에!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+                            <li class="popular-card h-auto promotion">
+                                <a href="/promotions/promoDetail.html">
+                                    <div class="content" style="background-image:url('https:/../images.unsplash.com/photo-1607082333475-51c2938c9bfc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                                        <span class="address">전라/전주</span>
+                                        <div class="title-bg">
+                                            <div class="pm">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="pm-category">체험</span>
+                                                        <img class="pm-icon" srcset="../images/icon-promotion.png 400w,
+                                                                                          ../images/icon-promotion@2x.png 700w,
+                                                                                          ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션" />
+                                                    </div>
+                                                    <div class="text-light pm-title">
+                                                        세가지 체험을 한번에!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3>내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</h3>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p>
+                                            <span class="price">₩25,000</span>
+                                            <del class="sale-price">₩44,000</del>
+                                        </p>
+                                        <span class="percent">50%</span>
+                                    </div>
+                                    <div class="term mt-1">2021.00.00~2021.00.00</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <nav aria-label="Page navigation example" class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-left-black.png 400w,
+                                                                      ../images/icon-left-black@2x.png 700w,
+                                                                      ../images/icon-left-black@3x.png 1000w" src="../images/icon-left-black@3x.png" alt="이전" />
+                                </a>
+                            </li>
+                            <li class="page-item active number"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-right-black.png 400w,
+                                                                      ../images/icon-right-black@2x.png 700w,
+                                                                      ../images/icon-right-black@3x.png 1000w" src="../images/icon-right-black@3x.png" alt="다음" />
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Footer -->
+<footer class="footer bg-light text-lg-start">
+    <!-- Grid container -->
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4">
+                <ul class="list-unstyled mb-0 d-flex">
+                    <li>
+                        <a href="/account/terms.html" class="text-dark">이용약관&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/account/policy.html" class="text-dark">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/cscenter/notice.html" class="text-dark">&nbsp;&nbsp;고객지원</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#partnership" class="text-dark">&nbsp;&nbsp;제휴 및 입점문의</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+
+            <!-- 제휴 및 입점 문의 -->
+            <!-- Modal -->
+            <div class="modal fade" id="partnership" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog popup">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title text-md" id="exampleModalLabel">제휴 및 입점 문의</h4>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                                                                ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                                                                ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기" />
+              </button> -->
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" placeholder="업체명">
+                            <input type="text" class="form-control mt-3" placeholder="브랜드명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 이메일">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 전화번호">
+                            <textarea class="form-control mt-4" cols="30" rows="10" placeholder="구체적인 제휴내용을 입력하세요"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="check">
+                                <label class="custom-control-label checkbox text-dark" for="check">개인정보 수집 및 이용에 동의</label>
+                            </div>
+                            <textarea class="form-control mt-2 bg-white" cols="30" rows="10" readonly></textarea>
+
+                        </div>
+                        <div class="modal-footer buttons">
+                            <button type="button" class="btn btn-outline-primary list-one" data-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-primary list-two">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 m-t5">
+                <h5 class="text-uppercase mb-0">액티부키</h5>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                        <div class="m-t1">
+                            <span>사업자 등록번호 : 123-56-789</span>
+                            <span>대표 : 이동원</span>
+                        </div>
+                        <div class="m-th">전라북도 전주시 완산구 효자동2가 바우배기2길 18, 2층 202호</div>
+                    </div>
+                    <!-- sns -->
+                    <ul class="sns-group">
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/naver-footer.png 400w,
+                                                ../images/naver-footer@2x.png 700w,
+                                                ../images/naver-footer@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="네이버" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/facebook.png 400w,
+                                                ../images/facebook@2x.png 700w,
+                                                ../images/facebook@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="카카오" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/instagram.png 400w,
+                                                ../images/instagram@2x.png 700w,
+                                                ../images/instagram@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="인스타그램" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+</footer>
+<!-- Footer -->
+    </div>
+
+    <script>
+
+
+    </script>
+<script src=".././js/index.bundle.js?34fa27f2c7d7877b4e41"></script></body>
+
+</html>

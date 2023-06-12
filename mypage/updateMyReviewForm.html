@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>나의 리뷰 수정</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/headertitle.css">
+
+    <!-- rater css -->
+    <link rel="stylesheet" href="../css/rater.css">
+    <!--raterjs-->
+    <script src="../js/rater.js"></script>
+    <!-- include -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="favicon.ico">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/l10n/ko.min.js" crossorigin="anonymous"></script> -->
+<script src="../js/dotdotdot.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script> -->
+<script src="../js/owlcarousel.js"></script>
+<script type="text/javascript" defer src="../js/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+<script type="text/javascript" defer src="../js/daterangepicker.js"></script>
+
+<!-- swiper css, js -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<script src="../js/swiper-bundle.js"></script>
+
+
+<!-- header -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('body').removeClass('hidden');
+            } else {
+                $('body').addClass('hidden');
+            }
+        })
+
+    })
+
+</script>
+<link href=".././css/styles.css?34fa27f2c7d7877b4e41" rel="stylesheet"></head>
+
+<body>
+    <!-- 브라우저 권장 -->
+    <!--[if IE]>
+<div class="p-3 bg-light">
+  <div class="container">
+    <p class="mb-0 browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+    </p>
+  </div>
+</div>
+<![endif]-->
+
+    <div class="fm">
+        <!-- 헤더 -->
+        <header class="header">
+
+  <div class="container">
+    <div class="header-top">
+      <!-- 로그인 전 -->
+      <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login.html">로그인<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cscenter/notice.html">고객지원</a>
+        </li>
+      </ul>
+      <!-- 로그인 후 -->
+      <!-- <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <button type="button" class="nav-link">로그아웃</button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/farmPlay.html">고객지원</a>
+        </li>
+      </ul> -->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/index.html">
+        <img src="../images/logo@3x.png" alt="로고" class="nav-logo">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="acetrnt-toggle" data-click-state="1">
+          <span class="icon-bar line-1"></span>
+          <span class="icon-bar line-2"></span>
+          <span class="icon-bar line-3"></span>
+        </div>
+      </button>
+
+
+      <div class="navbar-collapse collapse multi-collapse" id="navbarSupportedContent">
+        <!-- app header ui -->
+        <div class="app-header-ui">
+          <a href="/login.html" class="login">로그인 해주세요
+            <img class="sm-icon" srcset="../images/icon-right-white.png 400w,
+                    ../images/icon-right-white@2x.png 700w,
+                    ../images/icon-right-white@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="로그인페이지로이동" />
+          </a>
+          <div class="list">
+            <a href="/index.html">
+              <img class="sm-icon" srcset="../images/icon-home-white.png 400w,
+                      ../images/icon-home-white@2x.png 700w,
+                      ../images/icon-home-white@3x.png 1000w" src="../images/icon-home-white@3x" alt="홈" />
+              홈
+            </a>
+            <a href="">
+              <img class="sm-icon" srcset="../images/icon-mypage-white.png 400w,
+                      ../images/icon-mypage-white@2x.png 700w,
+                      ../images/icon-mypage-white@3x.png 1000w" src="../images/icon-mypage-white@3x" alt="마이페이지" />
+              마이페이지
+            </a>
+            <!-- non member -->
+            <a href="/login.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                      ../images/icon-date-white@2x.png 700w,
+                      ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a>
+            <!-- member -->
+            <!-- <a href="/mypage/myBook.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                                  ../images/icon-date-white@2x.png 700w,
+                                  ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a> -->
+          </div>
+        </div>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/stay/stayMain.html">숙소<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/exp/expMain.html">체험</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/promotions/promoMain.html">프로모션</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/productsMain.html">상품구매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">우수체험관</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 web-header-ui">
+          <!-- 로그인 전 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color" data-toggle="modal" data-target="#reservationConfirm">예약확인&nbsp;</a>
+          </div>
+          <!-- 로그인 후 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color">예약확인&nbsp;</a>
+            <a href="/login.html" class="nav-right">|&nbsp; 마이페이지</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+        <main class="d-flex flex-column h-100 main">
+            <!-- Content Here -->
+            <header class="header-title">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between">
+                                <!-- <a href="">
+                                  <img src="../images/icon-left-black@3x.png" class="sm-icon" alt="뒤로가기">
+                                </a> -->
+                                <button class="navbar-toggler collapsed header-main" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+                                    <div class="acetrnt-toggle" data-click-state="1">
+                                        <span class="icon-bar line-1"></span>
+                                        <span class="icon-bar line-2"></span>
+                                        <span class="icon-bar line-3"></span>
+                                    </div>
+                                </button>
+                                <h1 class="title">마이페이지</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="mypage-tab-nav text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 m-p0">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/mypage/myInfo.html">내 정보 수정</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/mypage/myReview.html">나의 리뷰</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="/mypage/myRequest.html">상품문의</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="/mypage/myBook.html">예약확인</a>
+                                </li>
+                                <li class="nav-item display-md-down">
+                                    <a class="nav-link" href="/account/terms.html">이용약관</a>
+                                </li>
+                                <li class="nav-item  display-md-down">
+                                    <a class="nav-link" href="/account/policy.html">개인정보 처리방침</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- book card -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="section-title">리뷰 작성</h3>
+                        <ul>
+                            <li class="book-card">
+                                <a href="" class="d-flex md-block">
+                                    <div class="content" style="background-image:url('../images/bread.jpg')">
+                                        <span class="address">전라/전주</span>
+                                    </div>
+                                    <div class="detail-info">
+                                        <div class="d-flex justify-content-between align-items-center border-bottom">
+                                            <div class="book-kinds">
+                                                <img srcset="../images/icon-home-primary.png 400w,
+                                    ../images/icon-home-primary@2x.png 700w,
+                                    ../images/icon-home-primary@3x.png 1000w" src="../images/icon-home-primary@3x.png" alt="숙소">
+
+                                                <img srcset="../images/icon-activity-primary.png 400w,
+                                    ../images/icon-activity-primary@2x.png 700w,
+                                    ../images/icon-activity-primary@3x.png 1000w" src="../images/icon-activity-primary@3x.png" alt="체험">
+                                                <img srcset="../images/icon-promotion.png 400w,
+                                    ../images/icon-promotion@2x.png 700w,
+                                      ../images/icon-promotion@3x.png 1000w" src="../images/icon-promotion@3x.png" alt="프로모션">
+                                                <span class="left">
+                                                    <span>숙소&nbsp;|</span>
+                                                    <span>2021.03.29</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex md-block">
+                                            <div class="left-area">
+                                                <h1>예약카드 제목</h1>
+                                                <ul class="booked_info">
+                                                    <li>
+                                                        <img class="sm-icon" srcset="../images/icon-date-black.png 400w,
+                                                            ../images/icon-date-black@2x.png 700w,
+                                                            ../images/icon-date-black@3x.png 1000w" src="../images/icon-date-black@3x.png" alt="날짜">
+                                                        <span class="align-middle">2021년 00월 00일 ~ 2021년 00월 00일</span>
+                                                    </li>
+                                                    <li>
+                                                        <img class="sm-icon" srcset="../images/icon-user-gray.png 400w,
+                                                                                    ../images/icon-user-gray@2x.png 700w,
+                                                                                    ../images/icon-user-gray@3x.png 1000w" src="../images/icon-user-gray@3x.png" alt="인원수">
+                                                        <span class="align-middle">성인2, 소아1</span>
+                                                    </li>
+                                                    <li>
+                                                        <img class="sm-icon" srcset="../images/icon-date-black.png 400w,
+                                                                                    ../images/icon-date-black@2x.png 700w,
+                                                                                    ../images/icon-date-black@3x.png 1000w" src="../images/icon-date-black@3x.png" alt="날짜">
+                                                        <span class="align-middle">객실이름</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="right-area">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>1박</span>
+                                                    <span>₩36,000</span>
+                                                </div>
+                                                <div class="mt-2 d-flex justify-content-between align-items-center">
+                                                    <span>옵션01</span>
+                                                    <span>₩36,000</span>
+                                                </div>
+                                                <hr>
+                                                <div class="amount d-flex justify-content-between align-items-center">
+                                                    <span>결제금액</span>
+                                                    <span class="primary-color">₩36,000</span>
+                                                </div>
+                                                <div class="pay-type d-flex justify-content-between align-items-center">
+                                                    <span>결제방법</span>
+                                                    <span>카카오페이</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 별점 -->
+                        <div class="rating-area">
+                            <h4>별점</h4>
+                            <div class='rating-stars'>
+                                <ul id='stars'>
+                                    <li class='star' title='Poor' data-value='1'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Fair' data-value='2'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Good' data-value='3'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Excellent' data-value='4'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='WOW!!!' data-value='5'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 리뷰내용 -->
+                        <div class="review-area">
+                            <h4 class="sm-text-gray bold">리뷰 내용</h4>
+                            <textarea cols="30" rows="10" class="form-control" placeholder="리뷰 내용을 입력하세요">
+              </textarea>
+                        </div>
+
+                        <div class="review-submit-btn">
+                            <a href="/mypage/myBookPrev.html" class="btn cancel btn-outline-primary align-center">취소</a>
+                            <button type="button" class="btn add btn-primary">리뷰 수정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+        <!-- 푸터 -->
+        <!-- Footer -->
+<footer class="footer bg-light text-lg-start">
+    <!-- Grid container -->
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4">
+                <ul class="list-unstyled mb-0 d-flex">
+                    <li>
+                        <a href="/account/terms.html" class="text-dark">이용약관&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/account/policy.html" class="text-dark">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/cscenter/notice.html" class="text-dark">&nbsp;&nbsp;고객지원</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#partnership" class="text-dark">&nbsp;&nbsp;제휴 및 입점문의</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+
+            <!-- 제휴 및 입점 문의 -->
+            <!-- Modal -->
+            <div class="modal fade" id="partnership" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog popup">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title text-md" id="exampleModalLabel">제휴 및 입점 문의</h4>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                                                                ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                                                                ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기" />
+              </button> -->
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" placeholder="업체명">
+                            <input type="text" class="form-control mt-3" placeholder="브랜드명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 이메일">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 전화번호">
+                            <textarea class="form-control mt-4" cols="30" rows="10" placeholder="구체적인 제휴내용을 입력하세요"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="check">
+                                <label class="custom-control-label checkbox text-dark" for="check">개인정보 수집 및 이용에 동의</label>
+                            </div>
+                            <textarea class="form-control mt-2 bg-white" cols="30" rows="10" readonly></textarea>
+
+                        </div>
+                        <div class="modal-footer buttons">
+                            <button type="button" class="btn btn-outline-primary list-one" data-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-primary list-two">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 m-t5">
+                <h5 class="text-uppercase mb-0">액티부키</h5>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                        <div class="m-t1">
+                            <span>사업자 등록번호 : 123-56-789</span>
+                            <span>대표 : 이동원</span>
+                        </div>
+                        <div class="m-th">전라북도 전주시 완산구 효자동2가 바우배기2길 18, 2층 202호</div>
+                    </div>
+                    <!-- sns -->
+                    <ul class="sns-group">
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/naver-footer.png 400w,
+                                                ../images/naver-footer@2x.png 700w,
+                                                ../images/naver-footer@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="네이버" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/facebook.png 400w,
+                                                ../images/facebook@2x.png 700w,
+                                                ../images/facebook@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="카카오" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/instagram.png 400w,
+                                                ../images/instagram@2x.png 700w,
+                                                ../images/instagram@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="인스타그램" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+</footer>
+<!-- Footer -->
+    </div>
+
+    <!-- JS -->
+    <script>
+        $(function () {
+            $('#stars li').on('click', function () {
+                var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+                var stars = $(this).parent().children('li.star');
+
+                for (i = 0; i < stars.length; i++) {
+                    $(stars[i]).removeClass('selected');
+                }
+
+                for (i = 0; i < onStar; i++) {
+                    $(stars[i]).addClass('selected');
+                }
+            });
+        })
+    </script>
+<script src=".././js/index.bundle.js?34fa27f2c7d7877b4e41"></script></body>
+
+</html>

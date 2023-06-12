@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>숙소</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/headertitle.css">
+    <!-- include -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="favicon.ico">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/l10n/ko.min.js" crossorigin="anonymous"></script> -->
+<script src="../js/dotdotdot.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script> -->
+<script src="../js/owlcarousel.js"></script>
+<script type="text/javascript" defer src="../js/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+<script type="text/javascript" defer src="../js/daterangepicker.js"></script>
+
+<!-- swiper css, js -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<script src="../js/swiper-bundle.js"></script>
+
+
+<!-- header -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('body').removeClass('hidden');
+            } else {
+                $('body').addClass('hidden');
+            }
+        })
+
+    })
+
+</script>
+<link href=".././css/styles.css?34fa27f2c7d7877b4e41" rel="stylesheet"></head>
+
+<body>
+    <!-- 브라우저 권장 -->
+    <!--[if IE]>
+<div class="p-3 bg-light">
+  <div class="container">
+    <p class="mb-0 browserupgrade">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+    </p>
+  </div>
+</div>
+<![endif]-->
+
+    <div class="h-100">
+        <!-- 헤더 -->
+        <header class="header">
+
+  <div class="container">
+    <div class="header-top">
+      <!-- 로그인 전 -->
+      <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <a class="nav-link" href="/login.html">로그인<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cscenter/notice.html">고객지원</a>
+        </li>
+      </ul>
+      <!-- 로그인 후 -->
+      <!-- <ul class="d-flex justify-content-end">
+        <li class="nav-item active">
+          <button type="button" class="nav-link">로그아웃</button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/farmPlay.html">고객지원</a>
+        </li>
+      </ul> -->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/index.html">
+        <img src="../images/logo@3x.png" alt="로고" class="nav-logo">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="acetrnt-toggle" data-click-state="1">
+          <span class="icon-bar line-1"></span>
+          <span class="icon-bar line-2"></span>
+          <span class="icon-bar line-3"></span>
+        </div>
+      </button>
+
+
+      <div class="navbar-collapse collapse multi-collapse" id="navbarSupportedContent">
+        <!-- app header ui -->
+        <div class="app-header-ui">
+          <a href="/login.html" class="login">로그인 해주세요
+            <img class="sm-icon" srcset="../images/icon-right-white.png 400w,
+                    ../images/icon-right-white@2x.png 700w,
+                    ../images/icon-right-white@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="로그인페이지로이동" />
+          </a>
+          <div class="list">
+            <a href="/index.html">
+              <img class="sm-icon" srcset="../images/icon-home-white.png 400w,
+                      ../images/icon-home-white@2x.png 700w,
+                      ../images/icon-home-white@3x.png 1000w" src="../images/icon-home-white@3x" alt="홈" />
+              홈
+            </a>
+            <a href="">
+              <img class="sm-icon" srcset="../images/icon-mypage-white.png 400w,
+                      ../images/icon-mypage-white@2x.png 700w,
+                      ../images/icon-mypage-white@3x.png 1000w" src="../images/icon-mypage-white@3x" alt="마이페이지" />
+              마이페이지
+            </a>
+            <!-- non member -->
+            <a href="/login.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                      ../images/icon-date-white@2x.png 700w,
+                      ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a>
+            <!-- member -->
+            <!-- <a href="/mypage/myBook.html">
+              <img class="sm-icon" srcset="../images/icon-date-white.png 400w,
+                                  ../images/icon-date-white@2x.png 700w,
+                                  ../images/icon-date-white@3x.png 1000w" src="../images/icon-date-white@3x.png" alt="예약확인" />
+              예약확인
+            </a> -->
+          </div>
+        </div>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/stay/stayMain.html">숙소<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/exp/expMain.html">체험</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/promotions/promoMain.html">프로모션</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/productsMain.html">상품구매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">우수체험관</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 web-header-ui">
+          <!-- 로그인 전 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color" data-toggle="modal" data-target="#reservationConfirm">예약확인&nbsp;</a>
+          </div>
+          <!-- 로그인 후 -->
+          <div>
+            <a href="/mypage/myBook.html" class="nav-right primary-color">예약확인&nbsp;</a>
+            <a href="/login.html" class="nav-right">|&nbsp; 마이페이지</a>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+        <header class="header-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between">
+                            <!-- <a href="">
+                                          <img src="../images/icon-left-black@3x.png" class="sm-icon" alt="뒤로가기">
+                                        </a> -->
+                            <button class="navbar-toggler collapsed header-main" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-controls="navbarSupportedContent backdropUi" aria-expanded="false" aria-label="Toggle navigation">
+                                <div class="acetrnt-toggle" data-click-state="1">
+                                    <span class="icon-bar line-1"></span>
+                                    <span class="icon-bar line-2"></span>
+                                    <span class="icon-bar line-3"></span>
+                                </div>
+                            </button>
+                            <h1 class="title">숙소</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="d-flex flex-column main">
+            <section class="card_body grey">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 m-auto filter-picker-ui">
+                            <div class="w-100">
+                                <div class="d-flex pick-filter-body">
+                                    <div class="d-flex w-100 xs-down-border">
+                                        <div class="filter-list pick-filter place">
+                                            <button type="button" class="dropdown-filter btn dropdown-toggle filter-place-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                어디로 떠날까요?
+                                            </button>
+                                            <div class="dropdown-menu w-auto filter-place-half">
+                                                <div class="d-flex justify-content-between">
+                                                    <h1 class="dropdown-title">어디로 떠날까요?</h1>
+                                                    <button type="button" class="dropdown-close close" data-dismiss="modal" aria-label="Close">
+                                                        <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                                                      ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                                                      ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기">
+                                                    </button>
+                                                </div>
+                                                <div class="dropdown-item activity-counter">
+                                                    <div class="popular-search-word">
+                                                        <ul class="d-flex">
+                                                            <li class="popular-list click-el">
+                                                                <input type="radio" id="area1" name="popularlist">
+                                                                <label for="area1">서울</label>
+                                                            </li>
+                                                            <li class="popular-list click-el">
+                                                                <input type="radio" id="area2" name="popularlist">
+                                                                <label for="area2">제주도</label>
+                                                            </li>
+                                                            <li class="popular-list click-el">
+                                                                <input type="radio" id="area3" name="popularlist">
+                                                                <label for="area3">강원도</label>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="d-flex area-group">
+                                                            <li class="area-list click-el">
+                                                                <input type="radio" id="area4" name="popularlist">
+                                                                <label for="area4">전체</label>
+                                                            </li>
+                                                            <li class="area-list click-el">
+                                                                <input type="radio" id="area5" name="popularlist">
+                                                                <label for="area5">서울</label>
+                                                            </li>
+                                                            <li class="area-list click-el">
+                                                                <input type="radio" id="area6" name="popularlist">
+                                                                <label for="area6">전주</label>
+                                                            </li>
+                                                            <li class="area-list click-el">
+                                                                <input type="radio" id="area7" name="popularlist">
+                                                                <label for="area7">임실</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="text-center apply-btn-wrapper">
+                                                    <button type="button" class="btn btn-primary apply dropdown-close">적용하기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter-list pick-filter start-d br-0">
+                                            <input type="text" class="form-control date br-0" readonly value="" name="daterange" placeholder="체크인" />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex w-100 md-down-mt-2 xs-down-border">
+                                        <div class="filter-list pick-filter end-d">
+                                            <input type="text" class="form-control date divider" readonly value="" name="daterange" placeholder="체크아웃" />
+                                        </div>
+                                        <div class="filter-list">
+                                            <button type="button" class="pick-filter people-n dropdown-filter btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                인원
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="d-flex justify-content-between">
+                                                    <h1 class="dropdown-title">인원</h1>
+                                                    <button type="button" class="dropdown-close close" data-dismiss="modal" aria-label="Close">
+                                                        <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                          ../images/icon-cancel-gray@2x.png 700w,
+                                                                                          ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기">
+                                                    </button>
+                                                </div>
+                                                <div class="dropdown-item activity-counter">
+                                                    <div>
+                                                        <span>성인</span>
+                                                    </div>
+                                                    <span class="right">
+                                                        <button type="button" class="minus-btn">
+                                                        </button>
+                                                        <span class="counter-num">2</span>
+                                                        <button type="button" class="add-btn">
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-item activity-counter">
+                                                    <div>
+                                                        <span>소아</span>
+                                                        <div class="detail">24개월~12세</div>
+                                                    </div>
+                                                    <span class="right">
+                                                        <button type="button" class="minus-btn">
+                                                        </button>
+                                                        <span class="counter-num">2</span>
+                                                        <button type="button" class="add-btn">
+                                                        </button>
+
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-item activity-counter">
+                                                    <div>
+                                                        <span>유아</span>
+                                                        <div class="detail">24개월 미만</div>
+                                                    </div>
+                                                    <span class="right">
+                                                        <button type="button" class="minus-btn">
+                                                        </button>
+                                                        <span class="counter-num">2</span>
+                                                        <button type="button" class="add-btn">
+                                                        </button>
+                                                    </span>
+                                                </div>
+
+                                                <div class="text-center apply-btn-wrapper">
+                                                    <button type="button" class="btn btn-primary apply dropdown-close">적용하기</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <div class="form-group filter-group md-up-d-block main">
+                                    <div class="lg-up-d-flex">
+                                        <div class="d-flex">
+                                            <div class="btn-group dropdown-group list">
+                                                <button type="button" class="dropdown-filter btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    가격
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h1 class="dropdown-title">가격</h1>
+                                                        <button type="button" class="dropdown-close close" data-dismiss="modal" aria-label="Close">
+                                                            <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                            ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                            ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기">
+                                                        </button>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select1" name="category">
+                                                            <label class="custom-control-label check-list" for="select1"><span>전체</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select2" name="category">
+                                                            <label class="custom-control-label check-list" for="select2">5만원미만</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select3" name="category">
+                                                            <label class="custom-control-label check-list" for="select3">5만원~10만원미만</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select4" name="category">
+                                                            <label class="custom-control-label check-list" for="select4">10만원~15만원미만</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select5" name="category">
+                                                            <label class="custom-control-label check-list" for="select5">15만원~20만원미만</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="select6" name="category">
+                                                            <label class="custom-control-label check-list" for="select6">20만원이상</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="text-center apply-btn-wrapper">
+                                                        <button type="button" class="btn btn-primary apply dropdown-close button-list">적용하기</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-group dropdown-group list">
+                                                <button type="button" class="dropdown-filter btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    숙소유형
+                                                </button>
+                                                <div class="dropdown-menu right">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h1 class="dropdown-title">숙소유형</h1>
+                                                        <button type="button" class="dropdown-close close" data-dismiss="modal" aria-label="Close">
+                                                            <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기">
+                                                        </button>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype1" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype1"><span>전체</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype2" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype2">원룸</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype3" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype3">농촌민박</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype4" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype4">펜션</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype5" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype5">농촌호텔</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" class="custom-control-input check-box-list" id="roomtype6" name="roomType">
+                                                            <label class="custom-control-label check-list" for="roomtype6">전통가옥</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="text-center apply-btn-wrapper">
+                                                        <button type="button" class="btn btn-primary apply dropdown-close button-list">적용하기</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter-input-text">
+                                            <input type="text" class="form-control" placeholder="여행지 또는 숙소명">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-primary search top-filter-search">검색</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <!-- <div class="row">
+          <h3 class="col-12 text-center mt-10">해당되는 숙소가 없습니다.<br>다시 검색해주세요!</h3>
+        </div> -->
+                <div class="row">
+                    <section class="col-12 mt-5 section-body card-ui m-mt">
+                        <div class="d-flex justify-content-between top-title">
+                            <h3>숙소</h3>
+                            <select name="" id="" class="form-control">
+                                <option value="">인기순</option>
+                                <option value="">최신순</option>
+                                <option value="">낮은가격순</option>
+                            </select>
+                        </div>
+                        <ul class="popular-card-body list">
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/stay1.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">인왕산 동쪽과 경복궁 서쪽 사이, 옛 모습을 고스란히 간직한 동네 서촌</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/stay2.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/stay3.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="popular-card">
+                                <a href="/stay/stayDetail.html">
+                                    <div class="content" style="background-image:url('../images/main_top.jpg')">
+                                        <span class="address">전라/전주</span>
+                                        <!-- <span class="percent">50%</span> -->
+                                        <!-- 숙소 -->
+                                        <span class="percent stay">50%</span>
+                                    </div>
+                                    <!-- 카테고리 -->
+                                    <div class="mt-1 sm-text-gray">농촌민박</div>
+                                    <h1 class="title-overflow">세월속에 현대의 시간이 포개지는 곳</h1>
+                                    <p>
+                                        <span class="price">₩2,5000</span>
+                                        <del class="sale-price">₩44,000</del>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <nav aria-label="Page navigation example" class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-left-black.png 400w,
+                                                                                        ../images/icon-left-black@2x.png 700w,
+                                                                                        ../images/icon-left-black@3x.png 1000w" src="../images/icon-left-black@3x.png" alt="이전" />
+                                </a>
+                            </li>
+                            <li class="page-item active number"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item number"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <img class="sm-icon" srcset="../images/icon-right-black.png 400w,
+                                                                                        ../images/icon-right-black@2x.png 700w,
+                                                                                        ../images/icon-right-black@3x.png 1000w" src="../images/icon-right-black@3x.png" alt="다음" />
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </main>
+        <!-- 푸터 -->
+        <!-- Footer -->
+<footer class="footer bg-light text-lg-start">
+    <!-- Grid container -->
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4">
+                <ul class="list-unstyled mb-0 d-flex">
+                    <li>
+                        <a href="/account/terms.html" class="text-dark">이용약관&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/account/policy.html" class="text-dark">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;|</a>
+                    </li>
+                    <li>
+                        <a href="/cscenter/notice.html" class="text-dark">&nbsp;&nbsp;고객지원</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#partnership" class="text-dark">&nbsp;&nbsp;제휴 및 입점문의</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+
+            <!-- 제휴 및 입점 문의 -->
+            <!-- Modal -->
+            <div class="modal fade" id="partnership" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog popup">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title text-md" id="exampleModalLabel">제휴 및 입점 문의</h4>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img class="sm-icon" srcset="../images/icon-cancel-gray.png 400w,
+                                                                                                                                                ../images/icon-cancel-gray@2x.png 700w,
+                                                                                                                                                ../images/icon-cancel-gray@3x.png 1000w" src="../images/icon-cancel-gray@3x.png" alt="닫기" />
+              </button> -->
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" placeholder="업체명">
+                            <input type="text" class="form-control mt-3" placeholder="브랜드명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자명">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 이메일">
+                            <input type="text" class="form-control mt-3" placeholder="담당자 전화번호">
+                            <textarea class="form-control mt-4" cols="30" rows="10" placeholder="구체적인 제휴내용을 입력하세요"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="check">
+                                <label class="custom-control-label checkbox text-dark" for="check">개인정보 수집 및 이용에 동의</label>
+                            </div>
+                            <textarea class="form-control mt-2 bg-white" cols="30" rows="10" readonly></textarea>
+
+                        </div>
+                        <div class="modal-footer buttons">
+                            <button type="button" class="btn btn-outline-primary list-one" data-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-primary list-two">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 m-t5">
+                <h5 class="text-uppercase mb-0">액티부키</h5>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                        <div class="m-t1">
+                            <span>사업자 등록번호 : 123-56-789</span>
+                            <span>대표 : 이동원</span>
+                        </div>
+                        <div class="m-th">전라북도 전주시 완산구 효자동2가 바우배기2길 18, 2층 202호</div>
+                    </div>
+                    <!-- sns -->
+                    <ul class="sns-group">
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/naver-footer.png 400w,
+                                                ../images/naver-footer@2x.png 700w,
+                                                ../images/naver-footer@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="네이버" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/facebook.png 400w,
+                                                ../images/facebook@2x.png 700w,
+                                                ../images/facebook@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="카카오" />
+                            </a>
+                        </li>
+                        <li class="sns-list">
+                            <a href="">
+                                <img class="md-icon" srcset="../images/instagram.png 400w,
+                                                ../images/instagram@2x.png 700w,
+                                                ../images/instagram@3x.png 1000w" src="../images/icon-right-white@3x.png" alt="인스타그램" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+</footer>
+<!-- Footer -->
+    </div>
+
+    <!-- JS -->
+    <script>
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                defaultDate: "",
+                opens: 'center',
+                // autoUpdateInput: false,
+                autoApply: true,
+                singleDatePicker: true,
+                "locale": {
+                    "format": "YYYY.MM.DD",
+                    "separator": "-",
+                    "applyLabel": "적용",
+                    "cancelLabel": "취소",
+                    "fromLabel": "From",
+                    "toLabel": "To",
+                    "customRangeLabel": "Custom",
+                    "daysOfWeek": [
+                        "월",
+                        "화",
+                        "수",
+                        "목",
+                        "금",
+                        "토",
+                        "일"
+                    ],
+                    "monthNames": [
+                        "1월",
+                        "2월",
+                        "3월",
+                        "4월",
+                        "5월",
+                        "6월",
+                        "7월",
+                        "8월",
+                        "9월",
+                        "10월",
+                        "11월",
+                        "12월"
+                    ]
+                }
+            }, function (start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+            function setDotDotDot() {
+                $(".title-overflow").dotdotdot({
+                    ellipsis: '...',//말줄임 뭘로 할지
+                    watch: true, //윈도우 창에따라서 업데이트 할건지, 윈도우가 리사이즈될 때 업데이트할 건지
+                    wrap: 'letter',//word(단어단위), letter(글 단위), children(자식단위) 자르기
+                    height: 40,
+                    tolerance: 20
+                    //글이 넘치면 얼만큼 height 늘릴건
+                });
+            }
+
+            setDotDotDot();
+
+
+            //value값 초기화
+            $('input[name="daterange"]').val('');
+
+
+            //dropdown menu
+            $('.dropdown-item').click(function (e) {
+                // console.log(e);
+                e.stopPropagation();
+            })
+
+
+        })
+    </script>
+<script src=".././js/index.bundle.js?34fa27f2c7d7877b4e41"></script></body>
+
+</html>

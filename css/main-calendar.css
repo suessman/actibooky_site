@@ -1,0 +1,27 @@
+        .header nav .navbar-toggler.collapsed .icon-bar {
+            background-color: #fff !important;
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .daterangepicker {
+                width: calc(100% - 32px);
+                left: 16px !important;
+            }
+
+            .drp-calendar.left,
+            .drp-calendar.right {
+                width: 50%;
+            }
+        }
+
+        @media(min-width:768px) {
+            .daterangepicker {
+                width: calc(100% - 110px);
+                left: 16px !important;
+            }
+
+            .drp-calendar.left,
+            .drp-calendar.right {
+                width: 50%;
+            }
+        }
